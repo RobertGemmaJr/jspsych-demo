@@ -7,7 +7,7 @@ import jsPsychImageKeyboardResponse from "@jspsych/plugin-image-keyboard-respons
 // Adds the custom styling
 import "jspsych/css/jspsych.css";
 
-/* Initialize jsPsych (Honeycomb handles this for us) */
+// Initialize an instance of the jsPsych class
 const jsPsych = initJsPsych({
   // Display the data after the experiment finishes
   on_finish: () => {
