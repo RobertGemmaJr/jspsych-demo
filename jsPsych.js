@@ -19,23 +19,26 @@ const jsPsych = initJsPsych({
     console.log(`Trial ${data.internal_node_id} just finished:`, data);
   },
 });
+
+/*
 const timeline = [];
 
-/* preload images trial */
+// Trial for preloading all of the images
 const preload = {
   type: jsPsychPreload,
   images: ["img/blue.png", "img/orange.png"],
 };
 timeline.push(preload); // Add trial to the timeline
 
-/* welcome message trial */
+
+// Trial for displaying a welcome message
 const welcome = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: "Welcome to the experiment. Press any key to begin.",
 };
 timeline.push(welcome); // Add trial to the timeline
 
-/* instructions trial */
+// Trial for displaying instructions
 const instructions = {
   type: jsPsychInstructions,
   pages: [
@@ -50,7 +53,7 @@ const instructions = {
 };
 timeline.push(instructions); // Add trial to timeline
 
-/* fixation trial */
+// Trial for displaying a fixation cross
 const fixation = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: '<div style="font-size:60px;">+</div>',
@@ -68,7 +71,7 @@ const fixation = {
   },
 };
 
-/* test trial - this is the meat! */
+// Define the main trial of the experiment
 const test = {
   type: jsPsychImageKeyboardResponse,
   // stimulus is pulled from the timeline variable (see below)
@@ -83,8 +86,8 @@ const test = {
   },
 };
 
-/* define test trial ("block") */
-const test_block = {
+// Define the main procedure of the experiment
+const test_procedure = {
   // This trial is a nested timeline with custom variables!
   timeline: [fixation, test],
   timeline_variables: [
@@ -95,9 +98,9 @@ const test_block = {
   repetitions: 3,
   randomize_order: true,
 };
-timeline.push(test_block); // Add block to timeline
+timeline.push(test_procedure); // Add procedure to timeline
 
-/* define debrief */
+// Define the debrief trial, displays some results
 const debrief = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: () => {
@@ -114,5 +117,7 @@ const debrief = {
 };
 timeline.push(debrief); // Add trial to the timeline
 
-/* start the experiment! (Honeycomb handles this for us) */
+// Start the experiment!
 jsPsych.run(timeline);
+
+*/
